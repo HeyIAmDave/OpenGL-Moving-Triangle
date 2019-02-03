@@ -4,7 +4,7 @@ Texture::Texture()
 	: m_textureID(0), m_initialized(false)
 { }
 
-void Texture::Init(unsigned char * data, int w, int h)
+void Texture::Init(unsigned char * data, int w, int h, GLenum internalFormat, GLenum format)
 {
 	if (m_initialized)
 		return;
@@ -15,7 +15,7 @@ void Texture::Init(unsigned char * data, int w, int h)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+	glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, w, h, 0, format, GL_UNSIGNED_BYTE, data);
 
 	m_initialized = true;
 }
