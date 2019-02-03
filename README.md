@@ -1,2 +1,4 @@
 # OpenGL-Moving-Triangle
-Just me writing basic code
+Hey I am Dave.
+
+Here is some simple (probably bad) code I write while learning C++ and OpenGL.
